@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\FashiShop.Core\FashiShop.Core.csproj" />
+    <ProjectReference Include="..\FashiShop.DAL\FashiShop.DAL.csproj" />
+    <ProjectReference Include="..\FashiShop.Model\FashiShop.Model.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
