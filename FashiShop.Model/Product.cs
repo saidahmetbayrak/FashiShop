@@ -19,6 +19,7 @@ namespace FashiShop.Model
         public string ProductImgUrl { get; set; }
         public Color ProductColor { get; set; }
         public Size ProductSize { get; set; }
+        public  Gender ProductGender{get; set;}
 
         //Mapping
         public virtual Category Category { get; set; }
@@ -42,4 +43,10 @@ public enum Size{
     L=4,
     XL=5,
     XXL=6
+}
+public enum Gender{
+Men = 1,
+Women = 2,
+Kids = 3
+
 }

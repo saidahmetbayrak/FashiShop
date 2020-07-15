@@ -1,13 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <ItemGroup>
     <ProjectReference Include="..\FashiShop.Core\FashiShop.Core.csproj" />
-    <ProjectReference Include="..\FashiShop.DAL\FashiShop.DAL.csproj" />
     <ProjectReference Include="..\FashiShop.Model\FashiShop.Model.csproj" />
+    <ProjectReference Include="..\FashiShop.DAL\FashiShop.DAL.csproj" />
   </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5" />
+  </ItemGroup>
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-
 </Project>

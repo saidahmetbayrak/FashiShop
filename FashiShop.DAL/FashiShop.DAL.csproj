@@ -3,11 +3,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.5" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FashiShop.Model\FashiShop.Model.csproj"/>
-    <ProjectReference Include="..\FashiShop.Core\FashiShop.Core.csproj"/>
+    <ProjectReference Include="..\FashiShop.Model\FashiShop.Model.csproj" />
+    <ProjectReference Include="..\FashiShop.Core\FashiShop.Core.csproj" />
   </ItemGroup>
 </Project>

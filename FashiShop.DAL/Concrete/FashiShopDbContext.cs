@@ -7,10 +7,8 @@ namespace FashiShop.DAL.Concrete
 {
     public class FashiShopDbContext : DbContext
     {
-       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlServer("Server=.;Database=FashiShopDB;Trusted_Connection=True");
-    }
+       protected override void OnConfiguring(DbContextOptionsBuilder options)
+    => options.UseSqlServer("server = 127.0.0.1; database=FashiShopDb; User Id = sa; Password=1Secure*Password1; MultipleActiveResultSets=True");
         
         public  DbSet<Brand> Brands { get; set; }
         public  DbSet<Category> Categories { get; set; }

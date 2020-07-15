@@ -7,8 +7,7 @@ namespace FashiShop.BLL.Abstract
     where T:BaseEntity
     {
         void Insert(T entity);
-        void Delete(T entity);
-        void DeleteByID(int entityID);
+        void Remove(T entity);
         void Update(T entity);
         T GetById(int entityID);
         ICollection<T> GetAll();  

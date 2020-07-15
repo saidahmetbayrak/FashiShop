@@ -4,7 +4,7 @@ using FashiShop.Model;
 
 namespace FashiShop.DAL.Concrete
 {
-    public class BrandRepository : EFRepositoryBase<Brand, FashiShopDbContext>, IBrandDAL
+    public class BrandRepository : EFRepositoryBase<Brand,FashiShopDbContext>, IBrandDAL
     {
         
     }

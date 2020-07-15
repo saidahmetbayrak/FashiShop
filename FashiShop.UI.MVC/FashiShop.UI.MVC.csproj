@@ -1,7 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
+  <ItemGroup>
+    <ProjectReference Include="..\FashiShop.BLL\FashiShop.BLL.csproj" />
+    <ProjectReference Include="..\FashiShop.Core\FashiShop.Core.csproj" />
+    <ProjectReference Include="..\FashiShop.Model\FashiShop.Model.csproj" />
+  </ItemGroup>
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
 </Project>
