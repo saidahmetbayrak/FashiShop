@@ -14,26 +14,27 @@ namespace FashiShop.BLL.Concrete
         }
         public void Remove(Category entity)
         {
-            throw new System.NotImplementedException();
+            var data = _category.GetById(a => a.ID == entity.ID);
+            _category.Delete(data);
         }
         public ICollection<Category> GetAll()
         {
-            throw new System.NotImplementedException();
+            return _category.GetAll();
         }
 
         public Category GetById(int entityID)
         {
-            throw new System.NotImplementedException();
+            return _category.GetById(a => a.ID == entityID);
         }
 
         public void Insert(Category entity)
         {
-            throw new System.NotImplementedException();
+            _category.Add(entity);
         }
 
         public void Update(Category entity)
         {
-            throw new System.NotImplementedException();
+            _category.Update(entity);
         }
     }
 }

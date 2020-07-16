@@ -15,48 +15,38 @@ namespace FashiShop.BLL.Concrete
 
         public ICollection<User> CheckUser(string username, string mail)
         {
-            try
-            {
-                if(username != null && mail != null){
-                    
-                }
-            }
-            catch (System.Exception)
-            {
-                
-                throw;
-            }
             return _user.GetAll(a => a.UserName == username && a.Email == mail || a.UserName==username || a.Email==mail );
         }
 
         public void Remove(User entity)
         {
-            _user.Delete(entity);
+            var data = _user.GetById(a => a.ID == entity.ID);
+            _user.Delete(data);
         }
 
         public ICollection<User> GetAll()
         {
-            throw new System.NotImplementedException();
+            return _user.GetAll();
         }
 
         public User GetById(int entityID)
         {
-            throw new System.NotImplementedException();
+            return _user.GetById(a => a.ID == entityID);
         }
 
         public User GetUserByLogin(string email, string password)
         {
-            throw new System.NotImplementedException();
+            return _user.GetById(a => a.Email == email && a.Password == password);
         }
 
         public void Insert(User entity)
         {
-            throw new System.NotImplementedException();
+            _user.Add(entity);
         }
 
         public void Update(User entity)
         {
-            throw new System.NotImplementedException();
+            _user.Update(entity);
         }
     }
 }

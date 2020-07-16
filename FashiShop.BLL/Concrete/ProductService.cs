@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 using FashiShop.BLL.Abstract;
 using FashiShop.DAL.Abstract;
@@ -13,26 +14,56 @@ namespace FashiShop.BLL.Concrete
         }
         public void Remove(Product entity)
         {
-            throw new System.NotImplementedException();
+            var data = _product.GetById(a => a.ID == entity.ID);
+            _product.Delete(data);
         }
         public ICollection<Product> GetAll()
         {
-            throw new System.NotImplementedException();
+            return _product.GetAll();
         }
 
         public Product GetById(int entityID)
         {
-            throw new System.NotImplementedException();
+            return _product.GetById(a => a.ID == entityID);
         }
 
         public void Insert(Product entity)
         {
-            throw new System.NotImplementedException();
+           _product.Add(entity);
         }
 
         public void Update(Product entity)
         {
-            throw new System.NotImplementedException();
+            _product.Update(entity);
+        }
+
+        public ICollection<Product> GetGenderProduct(int genderId)
+        {
+            return _product.GetAll(a => (int)a.ProductGender == genderId).ToList();
+        }
+
+        public ICollection<Product> GetCategoryOfProduct(int categoryId)
+        {
+            return _product.GetAll(a => a.CategoryID == categoryId).ToList();
+
+        }
+
+        public ICollection<Product> GetBrandOfProduct(int brandId)
+        {
+            return _product.GetAll(a => a.BrandId == brandId).ToList();
+            
+        }
+
+        public ICollection<Product> GetSizeProduct(int sizeId)
+        {
+            return _product.GetAll(a => (int)a.ProductSize == sizeId).ToList();
+            
+        }
+
+        public ICollection<Product> GetColorProduct(int colorId)
+        {
+            return _product.GetAll(a => (int)a.ProductColor == colorId).ToList();
+            
         }
     }
 }
