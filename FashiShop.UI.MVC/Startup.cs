@@ -1,3 +1,4 @@
+using System.Reflection.Metadata;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using FashiShop.BLL.Ninject;
 
 namespace FashiShop.UI.MVC
 {
@@ -23,7 +25,9 @@ namespace FashiShop.UI.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            CustomModel.InjectDependencies(services);
             services.AddControllersWithViews();
+            services.AddMvcCore();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,12 +50,14 @@ namespace FashiShop.UI.MVC
 
             app.UseAuthorization();
 
+                       
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Admin}/{action=Index}/{id?}");
             });
+            
         }
     }
 }
